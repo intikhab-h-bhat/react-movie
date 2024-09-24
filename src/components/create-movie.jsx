@@ -1,9 +1,20 @@
-import React from 'react';
+import React  from 'react';
+import {Modal} from 'react-bootstrap'
+import EditMovie from './edit-movie';
 
-const CreateMovie=()=>{
+const CreateMovie=(props)=>{
 
     return(
-<h1>Create movie</h1>
+    <>
+        <Modal show={props.show} onHide={props.handleClose}  centered>
+            <Modal.Header closeButton>
+                <Modal.Title>Add New Movie</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <EditMovie/>
+            </Modal.Body>
+        </Modal>
+    </>
 
     );
 };
